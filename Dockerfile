@@ -1,6 +1,6 @@
-FROM golang:1.16-alpine AS builder
+FROM golang:1.17-alpine AS builder
 RUN go install go.k6.io/xk6/cmd/xk6@latest
-RUN xk6 build v0.33.0 --with github.com/dgzlopes/xk6-notification@latest --with github.com/szkiba/xk6-prometheus@latest
+RUN xk6 build v0.36.0 --with github.com/dgzlopes/xk6-notification@latest --with github.com/szkiba/xk6-prometheus@latest
 
 FROM alpine:3.13
 RUN apk add --no-cache ca-certificates && \
